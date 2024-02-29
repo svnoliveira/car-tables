@@ -7,26 +7,23 @@ interface IStatusButton {
 export const StatusButton = ({ available }: IStatusButton) => {
   return (
     <>
+      <div className="block absolute top-0 left-0 md:hidden">
+        <Image
+          src={`/icons/${available ? "success" : "failure"}.svg`}
+          alt={`${
+            available
+              ? "A green V icon symbolizing available"
+              : "A red X button symbolizing unavailable"
+          }`}
+          width={24}
+          height={24}
+        />
+      </div>
       {available ? (
-        <div>
-          <Image
-            src={"/icons/success.svg"}
-            alt="A green V icon symbolizing success"
-            width={24}
-            height={24}
-          />
-        </div>
+        <div className="hidden md:table-cell">Available</div>
       ) : (
-        <div>
-          <Image
-            src={"/icons/failure.svg"}
-            alt="A red X button symbolizing success"
-            width={24}
-            height={24}
-          />
-        </div>
+        <div className="hidden md:table-cell">Unavailable</div>
       )}
-      {available ? <div>Available</div> : <div>Unavailable</div>}
     </>
   );
 };
