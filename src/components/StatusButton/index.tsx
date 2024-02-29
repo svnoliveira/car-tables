@@ -7,7 +7,7 @@ interface IStatusButton {
 export const StatusButton = ({ available }: IStatusButton) => {
   return (
     <>
-      <div className="block absolute top-0 left-0 md:hidden">
+      <div className="block absolute top-2 left-0 md:hidden">
         <Image
           src={`/icons/${available ? "success" : "failure"}.svg`}
           alt={`${

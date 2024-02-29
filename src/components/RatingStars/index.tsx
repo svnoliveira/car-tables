@@ -2,15 +2,19 @@ import Image from "next/image";
 
 interface IRatingStars {
   rating: number;
+  mobile: boolean;
 }
 
-export const RatingStars = ({ rating }: IRatingStars) => {
+export const RatingStars = ({ rating, mobile }: IRatingStars) => {
   const getStarList = (n: number) => {
-    return Array.from({ length: n + 1 }, (_, i) => i);
+    if (n === 0) {
+        return []
+    }
+    return Array.from({ length: n }, (_, i) => i);
   };
 
   return (
-    <div className="flex md:table-cell">
+    <div className={`${mobile ? "flex md:hidden" : "hidden md:table-cell"}`}>
       <ul className="flex flex-row">
         {getStarList(rating).map((star) => (
           <li key={star}>
