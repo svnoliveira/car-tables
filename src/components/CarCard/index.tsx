@@ -20,9 +20,9 @@ export const CarCard = ({ car }: ICarCardProps) => {
       />
       <StatusButton available={car.status} />
       <RatingStars rating={car.rating} mobile={false} />
-      <div className="block md:table-cell ml-auto">
+      <div className="block md:table-cell ml-auto md:align-middle md:border-y md:border-gray-200 md:py-1">
         <Image
-          className="object-contain w-5 h-5"
+          className="object-contain w-5 h-5 md:mx-auto"
           src="/icons/action.svg"
           alt="3 dots Icon, simbolizing the menu"
           height={20}

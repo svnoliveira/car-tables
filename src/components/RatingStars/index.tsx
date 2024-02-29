@@ -8,13 +8,19 @@ interface IRatingStars {
 export const RatingStars = ({ rating, mobile }: IRatingStars) => {
   const getStarList = (n: number) => {
     if (n === 0) {
-        return []
+      return [];
     }
     return Array.from({ length: n }, (_, i) => i);
   };
 
   return (
-    <div className={`${mobile ? "flex md:hidden" : "hidden md:table-cell"}`}>
+    <div
+      className={`${
+        mobile
+          ? "flex md:hidden"
+          : "hidden md:table-cell md:align-middle md:border-y md:border-gray-200 md:pl-4 md:py-1"
+      }`}
+    >
       <ul className="flex flex-row">
         {getStarList(rating).map((star) => (
           <li key={star}>

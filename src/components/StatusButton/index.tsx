@@ -19,11 +19,15 @@ export const StatusButton = ({ available }: IStatusButton) => {
           height={24}
         />
       </div>
-      {available ? (
-        <div className="hidden md:table-cell">Available</div>
-      ) : (
-        <div className="hidden md:table-cell">Unavailable</div>
-      )}
+      <div className="hidden md:table-cell md:align-middle md:border-y md:border-gray-200 md:pl-4 md:py-1">
+        <div
+          className={`py-1 px-3 bg-${available ? "green" : "red"}-100 text-${
+            available ? "green" : "red"
+          }-800 text-xs font-medium w-fit rounded-md`}
+        >
+          {available ? "Available" : "Unavailable"}
+        </div>
+      </div>
     </>
   );
 };

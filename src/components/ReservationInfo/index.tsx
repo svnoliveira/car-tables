@@ -12,9 +12,9 @@ export const ReservationInfo = ({
   rating,
 }: IReservationInfoProps) => {
   return (
-    <div className="flex flex-col justify-between items-center md:table-cell">
+    <div className="flex flex-col justify-between items-center md:table-cell md:align-middle md:border-y md:border-gray-200 md:pl-4 md:py-1">
       <span className="block text-base font-semibold text-gray-900 md:hidden">{name}</span>
-      <div className="flex gap-1 text-xs font-normal text-gray-500">
+      <div className="flex gap-1 text-xs font-normal text-gray-500 md:text-sm">
         <span className="block md:hidden">Next reservation: </span>
         <span>{`${
           nextReservation.getMonth() + 1
